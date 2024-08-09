@@ -330,6 +330,7 @@ const Sidebar = ({ open, setOpen }) => {
                                 </Typography>
                             </Grid>
                         </Grid>
+                        
 
                     </DrawerHeaderbottom>
                 </div>
