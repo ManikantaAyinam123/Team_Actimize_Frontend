@@ -48,6 +48,9 @@ const FixedSidebar = styled('div')({
         background: '#ccc',
     },
 });
+
+
+  
 const Drawer = styled(MuiDrawer)(
     ({ theme, open }) => ({
         '& .MuiDrawer-paper': {
@@ -193,6 +196,7 @@ const CustomMenuItem = ({ item }) => {
         </>
     );
 };
+
 const SingleLevel = ({ item }) => {
     const navigate = useNavigate();
     return (
@@ -234,14 +238,21 @@ const Sidebar = ({ open, setOpen }) => {
     const theme = useTheme();
     const [decodedProfilePic, setDecodedProfilePic] = useState('');
     const dispatch = useDispatch();
-    useEffect(() => {
+    const handleFetchData = () => {
         dispatch(loadUserProfileDetailsStart());
-    }, [dispatch]);
+    };
+  
+    useEffect(() => {
+        window.addEventListener('load', handleFetchData);
+        return () => {
+            window.removeEventListener('load', handleFetchData);
+        };
+    }, []);
     const users = useSelector((state) => state.userprofiledetailsdata?.data?.current_user || []);
     console.log("bro im in side bar",users)
     localStorage.setItem('id',users.id);
 
-
+   
 
 
 

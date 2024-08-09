@@ -9,6 +9,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import AvatarEditor from 'react-avatar-editor';
 import { ThemeProvider } from '@mui/material/styles'; // Import ThemeProvider from Material-UI
 import theme from "../Theme"; // Import your theme file
+
 import {
   initialValues,
   generateValidationSchema,
@@ -49,12 +50,18 @@ const PersonalDetails = () => {
     if (!editMode) {
       console.log("values",values)
       dispatch(createUserStart(values));
+      
       // resetForm();
-     
+    
       // this.forceUpdate();
 
       Controls.toast.success('Data Added Successfully');
-       // window.location.reload();
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+     
+      // window.location.reload();
+       
     } else {
       console.log("values",values)
 
@@ -146,7 +153,9 @@ const PersonalDetails = () => {
       setBase64String(base64String);
       if( editMode === true){
        
-        // window.location.reload();
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
       }
       this.forceUpdate();
     }
