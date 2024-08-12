@@ -249,7 +249,7 @@ const Sidebar = ({ open, setOpen }) => {
         };
     }, []);
     const users = useSelector((state) => state.userprofiledetailsdata?.data?.current_user || []);
-    console.log("bro im in side bar",users)
+    
     localStorage.setItem('id',users.id);
 
    

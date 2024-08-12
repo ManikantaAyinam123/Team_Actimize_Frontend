@@ -40,7 +40,9 @@ export function* onLoginUserStartAsync({ payload }) {
         const token = result.data.token;
         const data = JSON.stringify(result.data.roles); // Convert roles object to JSON string
         localStorage.setItem("token", token);
+        
         localStorage.setItem("data", data);
+       
         if (result.status === 200) {
             window.location = '/';
             yield put(loginUserSuccess(result.data));
