@@ -107,15 +107,16 @@ const Approutes = () => (
         <Route path="/hr/experts/expertpage/bankdetails/:user_id" element={<PrivateRoute element={ExpertWisebankDetails} allowedRoles={['Management']} />} />
         <Route path="/hr/experts/expertpage/projects/:id" element={<PrivateRoute element={ExpertWiseProjects} allowedRoles={['Management']} />} />
         <Route path="/hr/experts/expertpage/leavebank/:id" element={<PrivateRoute element={ExpertWiseLeaveBank} allowedRoles={['Management']} />} />
-      </Route>
-
-      <Route path="/hr/proficiency" element={<PrivateRoute element={ProficiencyMangement} allowedRoles={['Management']} />} />
+        <Route path="/hr/proficiency" element={<PrivateRoute element={ProficiencyMangement} allowedRoles={['Management']} />} />
       <Route path="/hr/projects" element={<PrivateRoute element={ProjectsMangement} allowedRoles={['Management']} />} />
       <Route path="/hr/holidays" element={<PrivateRoute element={HolidaysMangement} allowedRoles={['Management']} />} />
       <Route path="/hr/payslip" element={<PrivateRoute element={PayslipMangement} allowedRoles={['Management']} />} />
       <Route path="/hr/birthdays" element={<PrivateRoute element={BirthdaysMangement} allowedRoles={['Management']} />} />
       <Route path="/hr/schedules-events" element={<PrivateRoute element={EventsMangement} allowedRoles={['Management']} />} />
       <Route path="/hr/gadgets" element={<PrivateRoute element={Gadgetsmangement} allowedRoles={['Management']} />} />
+      </Route>
+
+    
     </Routes>
     <ScrollToTop />
   </>
