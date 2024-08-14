@@ -248,7 +248,10 @@ const Sidebar = ({ open, setOpen }) => {
             window.removeEventListener('load', handleFetchData);
         };
     }, []);
+    
     const users = useSelector((state) => state.userprofiledetailsdata?.data?.current_user || []);
+    
+    
     
     localStorage.setItem('id',users.id);
 
@@ -261,7 +264,7 @@ const Sidebar = ({ open, setOpen }) => {
 
     
     useEffect(() => {
-        if (users && users.profile_pic) {
+        if (users && users.profile_pic ) {
             const base64Image = users.profile_pic;
             const base64String = base64Image.split(';base64,').pop();
             const cleanedBase64 = base64String.replace(/[^A-Za-z0-9+/]/g, '');
@@ -322,6 +325,7 @@ const Sidebar = ({ open, setOpen }) => {
 
                                 >
                                     {users?.name} 
+                                   
                                 </Typography>
                                 <Typography variant="h10" 
 

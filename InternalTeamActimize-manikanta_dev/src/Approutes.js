@@ -52,7 +52,7 @@ const ScrollToTop = () => {
   const pathname = useLocation();
   const prevPathname = useRef();
   const roles = JSON.parse(localStorage.getItem('data'));
-  console.log("private", roles);
+
 
   useEffect(() => {
     if (prevPathname.current !== pathname) {

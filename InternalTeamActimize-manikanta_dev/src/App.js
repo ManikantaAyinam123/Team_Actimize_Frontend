@@ -18,7 +18,7 @@ function App() {
   // Firebase messaging setup
   useEffect(() => { 
     const unsubscribe = onMessage(messaging, (payload) => {
-      console.log('Firebase message received:', payload); // Debugging
+     
       dispatch(loadNotificationsDetailsStart());
     });
     return () => unsubscribe(); // Cleanup on unmount
@@ -29,11 +29,10 @@ function App() {
     const storedToken = localStorage.getItem('token');
     const roles = localStorage.getItem('data');
     
-    console.log('Stored Token:', storedToken); // Debugging
-    console.log('Data Roles:', roles); // Debugging
+  
     
     if (!storedToken) {
-      console.log('No token found, redirecting to login'); // Debugging
+    
       navigate('/login');
     } else if (storedToken && pathname === '/login') {
       setToken(storedToken);
